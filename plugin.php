@@ -20,3 +20,5 @@ if ( class_exists( 'FEE' ) ) {
 require_once( 'class-fee.php' );
 
 new FEE;
+
+require 'src/plugin.php';

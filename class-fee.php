@@ -213,6 +213,7 @@ class FEE {
 				wp_enqueue_script( 'fee-tinymce-view', $this->url( '/js/tinymce.view.js' ), array( 'fee-tinymce' ), $this->package['version'], true );
 
 				wp_enqueue_script( 'fee-tinymce-theme', $this->url( '/js/tinymce.theme.js' ), array( 'fee-tinymce' ), $this->package['version'], true );
+				wp_enqueue_script( 'fee-tinymce-grid', $this->url( '/js/tinymce.grid.js' ), array( 'fee-tinymce' ), $this->package['version'], true );				
 			} else {
 				wp_enqueue_script( 'fee-tinymce-plugins', $this->url( '/js/tinymce.min.js' ), array( 'fee-tinymce' ), $this->package['version'], true );
 			}
@@ -227,7 +228,8 @@ class FEE {
 				'paste',
 				'insert',
 				'hr',
-				'lists'
+				'lists',
+				'feeGrid'
 			);
 
 			$tinymce_toolbar = array(
@@ -238,7 +240,8 @@ class FEE {
 				'unlink',
 				'blockquote',
 				'h2',
-				'h3'
+				'h3',
+				'table'
 			);
 
 			$tinymce_blocks = array(

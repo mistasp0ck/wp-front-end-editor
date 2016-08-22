@@ -677,6 +677,8 @@ div.wp-link-preview a {
 	cursor: pointer;
 }
 
+
+
 @media screen and ( max-width: 782px ) {
 	div.wp-link-preview {
 		margin: 8px 0 8px 5px;

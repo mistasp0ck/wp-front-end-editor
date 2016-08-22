@@ -23,8 +23,11 @@
 			$thumbnailWrap = $( '.fee-thumbnail-wrap' ),
 			$thumbnailEdit = $( '.fee-edit-thumbnail' ).add( '.fee-insert-thumbnail' ),
 			$thumbnailRemove = $( '.fee-remove-thumbnail' ),
-			$toolbar = $( '.fee-toolbar' ),
-			$buttons = $toolbar.find( '.button' ).add( $( '.fee-save-and-exit' ) ),
+			//Multiple Toolbars
+			$toolbar1 = $( '.fee-toolbar' ),
+			$toolbar2 = $( '.bs-toolbar' ),
+			$buttons = $toolbar1.find( '.button' ).add( $( '.fee-save-and-exit' ) ),
+			$buttons = $toolbar2.find( '.button' ).add( $( '.fee-save-and-exit' ) ),
 			$content = $( '.fee-content' ),
 			$contentOriginal = $( '.fee-content-original' ),
 			$categories = $( '.fee-categories' ),
@@ -374,7 +377,10 @@
 						event.content = event.content.replace( /<p>(?:&nbsp;|\s)+<\/p>/gi, '<p><br></p>' );
 					}
 				} );
-			}
+			},
+			toolbar2: 'alignleft aligncenter alignright'
+
+			// visualblocks_default_state: true
 		} ) );
 
 		function titleInit() {
@@ -646,6 +652,7 @@
 		if ( $.inArray( wp.fee.post.post_status(), [ 'publish', 'future', 'private' ] ) !== -1 ) {
 			$( '#wp-admin-bar-edit-publish' ).hide();
 			$( '#wp-admin-bar-edit-save > a' ).text( 'Update' );
+			$( '#wp-admin-bar-toggle-grid > a' ).text( 'Toggle Grid' );		
 		}
 
 		if ( wp.fee.notices.autosave ) {
